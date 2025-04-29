@@ -1,0 +1,265 @@
+.banner-para{
+    font-size: 14px;;
+}
+
+.banner-title{
+    font-weight: 600;
+    color:#232129
+}
+
+.nav-logo-img{
+    height:50px;
+    width:225px;
+}
+
+.section-py {
+    padding-block: 3.25rem;
+}
+
+.nav-bg-main{
+    background:#f8f8f8 !important
+}
+
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+.banner-main-img{
+    max-height:100%;
+    max-width:100%;
+}
+
+.nowrap{
+    text-wrap: nowrap;
+}
+
+.dropdown-menu .dropdown-item{
+    font-size: 14px !important;
+}
+
+.icon-prime-color{
+    color:#78fac5; 
+}
+
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1128px !important;
+    }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #1d2d9b;
+}
+
+.bg-number-box{
+    background-color: #78fac5 !important;
+    color: #fff !important;
+}
+
+.tab-b-bg{
+    border:none;
+    border-radius: 40px !important;
+    background-color: #f7fbff;
+}
+
+
+.banner-main-img-a{
+    max-height:100%;
+    max-width:70%;
+}
+
+
+.border-radius-40{
+    border-radius: 40px;;
+}
+
+
+
+
+
+
+
+
+.business-section-two .business-tabs .tab-btns {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.fadeInLeft animation {
+    opacity: 1;
+    transform: translateX(0px);
+}
+element.style {
+    visibility: visible;
+    animation-duration: 1500ms;
+    animation-delay: 0ms;
+    animation-name: fadeInLeft;
+}
+.business-section-two .business-tabs .tab-btns .tab-btn:hover, .business-section-two .business-tabs .tab-btns .tab-btn.active-btn {
+}
+.business-section-two .business-tabs .tab-btns .tab-btn {
+    position: relative;
+    font-size: 16px;
+    background: none;
+    color: #5a5a5a;
+    width: 30%;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0px 15px;
+    line-height: 1.7em;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 0px 30px 35px;
+    text-transform: capitalize;
+    transition: all 500ms ease;
+    background-color: #ffffff;
+    font-family: 'Roboto Condensed';
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+
+.business-section-two .business-tabs .tab-btns .tab-btn.active-btn h5, .business-section-two .business-tabs .tab-btns .tab-btn:hover h5 {
+    background-color: #007cd8;
+    color: #ffffff;
+}
+.business-section-two .business-tabs .tab-btns .tab-btn h5 {
+    position: relative;
+    top: -13px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: -14px;
+    padding: 14px 64px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #007cd8;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+
+
+.business-section-two .business-tabs .tab-btns .tab-btn .icon {
+    position: relative;
+    display: block;
+    line-height: 1em;
+    font-size: 60px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+
+
+
+.business-section-two .pattern-layer-two {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 1850px;
+    height: 897px;
+    background-repeat: no-repeat;
+}
+
+
+.writing-item{
+    position: relative;
+    padding: 20px 10px 30px 72px;
+    z-index: 1;
+    margin-bottom: 30px;
+    transition: .3s linear;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+
+.writing-content h4{
+    line-height: 1.4;
+}
+
+
+.writing-item:hover {
+    transform: translateY(-4px);
+}
+
+
+.writing-shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.writing-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 26px;
+    color: #fff;
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    z-index: 1;
+    transition: .3s linear;
+    transform: rotateY(0);
+}
+
+
+.writing-icon::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    background: #5a5a5a;
+    z-index: -1;
+}
+
+.writing-item {
+    position: relative;
+    perspective: 1000px;
+  
+    .writing-icon {
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+  
+    &:hover .writing-icon {
+      transform: rotateY(180deg);
+    }
+
+    &:hover .learn-more{
+        color:#1d2d9b !important
+    }
+
+
+  }

@@ -1,0 +1,98 @@
+.banner-para{
+    font-size: 14px;;
+}
+
+.banner-title{
+    font-weight: 600;
+    color:#232129
+}
+
+.nav-logo-img{
+    height:50px;
+    width:225px;
+}
+
+.section-py {
+    padding-block: 3.25rem;
+}
+
+.nav-bg-main{
+    background:#f8f8f8 !important
+}
+
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+.banner-main-img{
+    max-height:100%;
+    max-width:100%;
+}
+
+.banner-main-single-img{
+    width:75%
+}
+
+
+.bg-number-box{
+    background-color: #78fac5 !important;
+    color: #fff !important;
+}
+
+.card-img-com{
+    width:30%;
+}
+
+
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1128px !important;
+    }
+}
+
+.nav-bg-main-abt{
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height:38rem;
+
+}
+
+
+.container-abt{
+    max-width: 960px;
+}
+
+
+.card-img{
+    width:140px
+}
+
+
+#hero-animation {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #hero-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1); /* Adjust opacity as needed */
+  }
+  
+  #landingHero {
+    position: relative;
+    z-index: 1; /* Ensures text stays above the overlay */
+  }

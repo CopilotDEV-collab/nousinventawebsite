@@ -1,0 +1,108 @@
+.banner-para{
+    font-size: 14px;;
+}
+
+.banner-title{
+    font-weight: 600;
+    color:#232129
+}
+
+.nav-logo-img{
+    height:50px;
+    width:225px;
+}
+
+.section-py {
+    padding-block: 3.25rem;
+}
+
+.nav-bg-main{
+    background:#f8f8f8 !important
+}
+
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+.banner-main-img{
+    max-height:100%;
+    max-width:100%;
+}
+
+
+::ng-deep.nav-link .text-white{
+    color:#1d2d9b !important
+}
+
+
+.in{
+    height: 45px;
+}
+
+
+
+
+.breadcrumb-area {
+
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    // border-radius: 30px;
+    // margin-left: 30px;
+    // margin-right: 30px;
+    overflow: hidden;
+}
+
+.breadcrumb-shape-1 {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+
+.breadcrumb-shape-2 {
+    position: absolute;
+    left: 31%;
+    bottom: 32%;
+}
+
+.breadcrumb-shape-3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24%;
+}
+
+.breadcrumb-shape-4 {
+    position: absolute;
+    right: -155px;
+    top: 50px;
+    animation: animation-circle 20s linear 0s infinite;
+    z-index: -1;
+}
+
+
+
+@keyframes animation-circle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.timeline .timeline-item {
+    position: relative;
+    border: 0;
+    border-inline-start: 3px solid #fff !important;
+    padding-inline-start: 1.4rem;
+}

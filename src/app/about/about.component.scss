@@ -1,0 +1,250 @@
+.banner-para{
+    font-size: 14px;;
+}
+
+.banner-title{
+    font-weight: 600;
+    color:#232129
+}
+
+.nav-logo-img{
+    height:50px;
+    width:225px;
+}
+
+.section-py {
+    padding-block: 3.25rem;
+}
+
+.nav-bg-main{
+    background:#f8f8f8 !important
+}
+
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+.banner-main-img{
+    max-height:100%;
+    max-width:100%;
+}
+
+.banner-main-single-img{
+    width:75%
+}
+
+
+.bg-number-box{
+    width: 17px;
+    height: 17px;
+}
+
+.card-img-com{
+    width:30%;
+}
+
+
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1128px !important;
+    }
+}
+
+.nav-bg-main-abt{
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height:38rem;
+
+}
+
+
+.container-abt{
+    max-width: 980px;
+}
+
+#hero-animation {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #hero-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Adjust opacity as needed */
+  }
+  
+  #landingHero {
+    position: relative;
+    z-index: 1; /* Ensures text stays above the overlay */
+  }
+  
+
+  .our-val .card{
+    // min-height: 265px;;
+    // max-height: 265px;;
+  }
+
+
+  .single-values-box {
+    position: relative;
+    padding-left: 28px;
+    overflow: hidden;
+}
+  .single-values-box::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    background: #262739;
+    width: 2px;
+    height: 100%;
+}
+
+
+.single-values-box::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    background-image: url(../../assets/images/common/values-sp.png);
+    width: 2px;
+    height: 81px;
+    animation: slide_up 6s linear infinite;
+}
+
+@keyframes slide_up {
+    from {
+      bottom: -81px;
+    }
+    to {
+      bottom: 100%;
+    }
+  }
+
+
+
+  .bg-blend-around {
+    -webkit-mask-image: radial-gradient(ellipse, #000 50%, transparent 90%);
+    mask-image: radial-gradient(ellipse, #000 50%, transparent 90%);
+}
+
+
+  .bg-pattern-dot {
+    background-image: url(../../assets/images/common/dot-a.png);
+    background-position: center;
+}
+
+
+.nk-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+
+.abt-layer{
+    background-image: url(../../assets/images/common/suscribe-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 360px;
+    max-height: 360px;
+    border-radius: 32px;;
+}
+
+
+
+.section__title-title {
+    color: #FFFFFF !important;
+    font-size: 48px !important;
+    line-height: 1.2em !important;
+    font-weight: 600 !important;
+}
+
+
+.section__title-desc {
+    color: #FFFFFFB3 !important;
+}
+
+.section__title-desc {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 1.77 !important;
+}
+
+
+.pai__button {
+    background: #4229FF;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.pai__button-style-1 {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    padding: 16px 32px;
+    border-radius: 32px;
+    transition: 0.3s all ease;
+}
+
+
+.card-img-box{
+    width: 100%;            /* fixed box size */
+    overflow: hidden;        /* hide overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: #f2f2f2;     /* optional: light bg */
+    // border: 1px solid #ccc; 
+}
+
+.card-img-box img{
+    max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;   
+}
+
+
+.login-rt-img {
+    position: relative;
+    top: 14px;
+}
+
+.login-img-1 {
+    margin-top: 0;
+    margin-left: -40px;
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 0;
+    z-index: 9999;
+    position: relative;
+}
+
+.login-img-2 {
+    position: absolute;
+    right: -68px;
+    z-index: 99;
+    width: 95%;
+    top: -15px;
+}

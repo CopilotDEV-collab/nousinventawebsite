@@ -1,0 +1,46 @@
+.line-btn .line-decoration {
+    width: 60px;
+    height: 3px;
+    background: #6740ba;
+    border-radius: 10px;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    top: -3px;
+    overflow: hidden;
+}
+
+.swiper-pagination {
+     position: relative !important;
+}
+
+
+.banner-title{
+    color:#232129
+}
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+
+.nowrap{
+    text-wrap: nowrap;
+}
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1128px !important;
+    }
+}
+
+.cus-btn-hd{
+    background: linear-gradient(93deg, rgb(125, 37, 236) -15.1%, rgb(204, 180, 255) 144.78%) !important;
+}
+
+

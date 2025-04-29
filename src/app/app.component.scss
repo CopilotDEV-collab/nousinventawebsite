@@ -1,0 +1,75 @@
+.banner-para{
+    font-size: 14px;;
+}
+
+.banner-title{
+    font-weight: 600;
+    color:#232129
+}
+
+.nav-logo-img{
+    height:35px;
+    width:230px;
+}
+
+.section-py {
+    padding-block: 3.25rem;
+}
+
+.nav-bg-main{
+    background:#f8f8f8 !important
+}
+
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+.banner-main-img{
+    max-height:100%;
+    max-width:100%;
+}
+
+.nowrap{
+    text-wrap: nowrap;
+}
+
+.dropdown-menu .dropdown-item{
+    font-size: 14px !important;
+}
+
+.icon-prime-color{
+    color:#78fac5; 
+}
+
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1128px !important;
+    }
+}
+
+.layout-navbar{
+    transition: 800ms cubic-bezier(.2,.8,.2,1);
+}
+
+
+.navbar-active{
+    background-color: #fff !important;
+}
+
+
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+[data-scroll-container] {
+  overflow: hidden !important;
+}

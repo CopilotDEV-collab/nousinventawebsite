@@ -1,0 +1,124 @@
+.banner-para{
+    font-size: 14px;;
+}
+
+.banner-title{
+    font-weight: 600;
+    color:#232129
+}
+
+.nav-logo-img{
+    height:50px;
+    width:225px;
+}
+
+.section-py {
+    padding-block: 3.25rem;
+}
+
+.nav-bg-main{
+    background:#f8f8f8 !important
+}
+
+
+.banner-title-prime{
+    color:#1d2d9b
+}
+
+.bg-btn-linear{
+    background: #1d2d9b;
+    border:none
+}
+
+.banner-main-img{
+    max-height:100%;
+    max-width:100%;
+}
+
+.nowrap{
+    text-wrap: nowrap;
+}
+
+.dropdown-menu .dropdown-item{
+    font-size: 14px !important;
+}
+
+.icon-prime-color{
+    color:#78fac5; 
+}
+
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1128px !important;
+    }
+}
+
+
+.nav-bg-main-abt{
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height:38rem;
+
+}
+
+
+.container-abt{
+    max-width: 980px;
+}
+
+#hero-animation {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #hero-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Adjust opacity as needed */
+  }
+  
+  #landingHero {
+    position: relative;
+    z-index: 1; /* Ensures text stays above the overlay */
+  }
+  
+
+  .card-gb-clr{
+    background-color:#434d91; 
+    cursor: pointer;
+    transition: 800ms cubic-bezier(.2,.8,.2,1);
+  }
+
+.c-1 .card-header{
+    z-index: 999;
+}
+// .c-1::after {
+//     background-image: url(https://www.simform.com/wp-content/themes/simform/assets/images/service-prop-4.webp);
+// }
+
+//   .c-1::after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     background-repeat: no-repeat;
+//     background-position: 100% 100%;
+//     height: 100%;
+//     aspect-ratio: 1;
+//     z-index: 0;
+//     background-size: auto 100%;
+// }
+
+
+.card-gb-clr:hover{
+    transform: translateY(-10px);
+    background: rgba(160, 119, 248, 1);
+}
+
