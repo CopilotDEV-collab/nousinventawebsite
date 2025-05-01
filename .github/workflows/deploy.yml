@@ -31,4 +31,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/beta  # replace 'beta' with your actual project name
+          folder: dist/beta/browser  # replace 'beta' with your actual project name
