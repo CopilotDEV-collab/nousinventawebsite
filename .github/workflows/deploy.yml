@@ -3,7 +3,7 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - main  # or 'master' if that’s your default
+      - master  # or 'master' if that’s your default
 
 permissions:
   contents: write  # ✅ This allows GitHub Actions to push to gh-pages
