@@ -60,7 +60,7 @@
                 }
               ],
              "outputHashing": "all",
-             "baseHref": "/nousinventaweb/"
+             "baseHref": ""
             },
             "development": {
               "optimization": false,
