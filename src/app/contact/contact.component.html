@@ -50,28 +50,56 @@
                         <p class="mb-6">
                           To apply for a job, visit the career page.
                         </p>
-                        <form ngsubmit=>
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                           <h6>1. Tell us about your company</h6>
                           <div class="row g-4">
                             <div class="col-md-12">
-                               <input type="text" class="form-control in" id="contact-form-fullname" placeholder="Your Name*">
+                               <input type="text" formControlName="customerName" class="form-control in" id="contact-form-fullname" placeholder="Your Name*">
+                               <div *ngIf="(submitted || contactForm.get('customerName')?.touched) && contactForm.get('customerName')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                              </div>
+                            <div class="col-md-6">
+                              <input type="text" formControlName="customerEmail" class="form-control in " id="contact-form-fullname" placeholder="Your Email*">
+                              <div *ngIf="(submitted || contactForm.get('customerEmail')?.touched) && contactForm.get('customerEmail')?.errors" class="text-danger">
+                                <div *ngIf="contactForm.get('customerEmail')?.errors?.['required']">
+                                  <span style="font-size: 11px" class="mt-1">Email is required.</span>
+                                </div>
+                                <div *ngIf="contactForm.get('customerEmail')?.errors?.['email']">
+                                  <span style="font-size: 11px" class="mt-1">Please enter a valid email address.</span>
+                                </div>
+                              </div>
                             </div>
                             <div class="col-md-6">
-                              <input type="text" class="form-control in " id="contact-form-fullname" placeholder="Your Email*">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" id="contact-form-email" class="form-control in" placeholder="Your Phone Number*">
-                            </div>
+                                <input type="text" formControlName="customerPhoneNumber" maxlength="10"  id="contact-form-email" class="form-control in" placeholder="Your Phone Number*">
+                                <div *ngIf="(submitted || contactForm.get('customerPhoneNumber')?.touched) && contactForm.get('customerPhoneNumber')?.errors" class="text-danger">
+                                  <div *ngIf="contactForm.get('customerPhoneNumber')?.errors?.['required']">
+                                    <span style="font-size: 11px" class="mt-1">Phone number is required.</span>
+                                  </div>
+                                  <div *ngIf="contactForm.get('customerPhoneNumber')?.errors?.['pattern']">
+                                    <span style="font-size: 11px" class="mt-1">Phone number must be exactly 10 digits.</span>
+                                  </div>
+                                </div>
+                              </div>
                             <div class="col-md-12">
-                              <input type="text" id="contact-form-email" class="form-control in" placeholder="Company Name or Website*">
+                              <input type="text" formControlName="companyNameorWebsite"  id="contact-form-email" class="form-control in" placeholder="Company Name or Website*">
+                              <div *ngIf="(submitted || contactForm.get('companyNameorWebsite')?.touched) && contactForm.get('companyNameorWebsite')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
                             </div>
                             <h6 class="mb-0">2. Tell us more about your project</h6>
                             <div class="col-12">
-                               <textarea id="contact-form-message" class="form-control" rows="4" placeholder="Describe Your Project Briefly*"></textarea>
-                            </div>
+                               <textarea id="contact-form-message" formControlName="projectBrief" class="form-control" rows="4" placeholder="Describe Your Project Briefly*"></textarea>
+                               <div *ngIf="(submitted || contactForm.get('projectBrief')?.touched) && contactForm.get('projectBrief')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                              </div>
                             <div class="col-12">
-                              <textarea id="contact-form-message" class="form-control" rows="4" placeholder="Detail Your Queries*"></textarea>
-                           </div>
+                              <textarea id="contact-form-message" formControlName="projectQueries" class="form-control" rows="4" placeholder="Detail Your Queries*"></textarea>
+                              <div *ngIf="(submitted || contactForm.get('projectQueries')?.touched) && contactForm.get('projectQueries')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+                            </div>
                             <div class="col-12">
                               <div class="dropzone needsclick dz-clickable" id="dropzone-banner">
                                 <div class="dz-message-dz needsclick">
@@ -82,10 +110,14 @@
                             </div>
                             <h6 class="mb-0">3. Where did you hear about us?</h6>
                             <div class="col-12">
-                              <textarea id="contact-form-message" class="form-control" rows="5" placeholder="How Did You hear About Us*"></textarea>
-                           </div>
+                              <textarea formControlName="heardAboutUs" class="form-control" rows="5" placeholder="How Did You hear About Us*"></textarea>
+                              <div *ngIf="(submitted || contactForm.get('heardAboutUs')?.touched) && contactForm.get('heardAboutUs')?.invalid" class="text-danger">
+                                <span style="font-size: 11px" class="mt-1">This field is required.</span>
+                              </div>
+   
+                            </div>
                             <div class="col-12  mt-7">
-                              <button class="btn btn-md btn-primary py-3 px-10 shadow-lg bg-btn-linear" type="button">
+                              <button class="btn btn-md btn-primary py-3 px-10 shadow-lg bg-btn-linear" type="submit">
                                 Submit
                             </button>
                             </div>
