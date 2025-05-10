@@ -61,7 +61,7 @@ export class ContactComponent {
       previewTemplate: this.DROPZONE__PREVIEW_TEMPLATE,
       acceptedFiles: ".jpeg,.jpg,.png,.pdf,.xls,.xlsx,.txt,.docx",
       maxFiles: 4,
-      maxFilesize: 1, // MB
+      maxFilesize: 1, 
       addRemoveLinks: true,
       accept: function (file: any, done: any) {
         done();
