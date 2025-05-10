@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { success, error,successcontact,errorcontact } from '../../app/alertbox/alert';
 declare var Dropzone: any;
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,8 @@ declare var Dropzone: any;
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+
+  dropzoneInstance:any;
 
   DROPZONE__PREVIEW_TEMPLATE:any = `<div class="dz-preview dz-file-preview">
   <div class="dz-details">
@@ -52,11 +55,11 @@ export class ContactComponent {
   bannerfile:any=[];
 
   ngAfterViewInit(): void {
-    new Dropzone("#dropzone-banner", {
+    this.dropzoneInstance = new Dropzone("#dropzone-banner", {
       url: "/",
       paramName: "file12",
       previewTemplate: this.DROPZONE__PREVIEW_TEMPLATE,
-      acceptedFiles: ".jpeg,.jpg,.png,.gif",
+      acceptedFiles: ".jpeg,.jpg,.png,.pdf,.xls,.xlsx,.txt,.docx",
       maxFiles: 4,
       maxFilesize: 1, // MB
       addRemoveLinks: true,
@@ -67,9 +70,7 @@ export class ContactComponent {
         const uniqueId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
         file.customId = uniqueId;
         this.bannerfile.push({id: uniqueId, file: file});
-        console.log(file)
       }, removedfile: (file: any) => {
-        console.log(file)
         file.previewElement.remove();
         this.bannerfile = this.bannerfile.filter((f:any) => f.id !== file.customId);
       }, bind(this) { }
@@ -85,11 +86,22 @@ export class ContactComponent {
       }
     }
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value)
        this.http.post('https://nousinventa.com/app/api/submitcontact', this.contactForm.value)
         .subscribe({
-          next: res => alert('Submitted successfully!'),
-          error: err => alert('Error: ' + err.message)
+          next: res =>{
+            successcontact("Thank you! Your message has been sent successfully.");
+            this.bannerfile = [];
+            this.contactForm.reset();
+            this.dropzoneInstance.removeAllFiles(true); 
+            this.submitted = false;
+          },
+          error: err => {
+            errorcontact("Sorry! Something went wrong. Please try again later.")
+            this.bannerfile=[];
+            this.contactForm.reset();
+            this.dropzoneInstance.removeAllFiles(true); 
+            this.submitted = false;
+          }  
         });
     }
   }
