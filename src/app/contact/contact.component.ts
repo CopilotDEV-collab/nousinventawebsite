@@ -96,7 +96,7 @@ export class ContactComponent {
             this.submitted = false;
           },
           error: err => {
-            errorcontact("Sorry! Something went wrong. Please try again later.")
+            errorcontact("Sorry! Something went wrong. Please try again later.");
             this.bannerfile=[];
             this.contactForm.reset();
             this.dropzoneInstance.removeAllFiles(true); 
