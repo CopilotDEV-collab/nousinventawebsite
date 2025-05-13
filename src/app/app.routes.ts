@@ -72,6 +72,14 @@ export const routes: Routes = [
         pathMatch: 'full',
         loadComponent: () => import('./industries/education/education.component').then(m => m.EducationComponent)
     },{
+        path: 'manufacturing',
+        pathMatch: 'full',
+        loadComponent: () => import('./industries/manufacturing/manufacturing.component').then(m => m.ManufacturingComponent)
+    },{
+        path: 'realestate',
+        pathMatch: 'full',
+        loadComponent: () => import('./industries/realestate/realestate.component').then(m => m.RealEstateComponent)
+    },{
         path: 'coldcaller',
         pathMatch: 'full',
         loadComponent: () => import('./usecase/coldcaller/coldcaller.component').then(m => m.ColdcallerComponent)
