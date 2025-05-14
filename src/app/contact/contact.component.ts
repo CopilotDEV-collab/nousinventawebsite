@@ -42,10 +42,6 @@ export class ContactComponent {
       projectBrief: ['', Validators.required],
       projectQueries: ['',Validators.required],
       heardAboutUs: ['', Validators.required],
-      fileNo_1: [null],
-      fileNo_2: [null],
-      fileNo_3: [null],
-      fileNo_4: [null],
     });
     }
 
@@ -61,7 +57,7 @@ export class ContactComponent {
       previewTemplate: this.DROPZONE__PREVIEW_TEMPLATE,
       acceptedFiles: ".jpeg,.jpg,.png,.pdf,.xls,.xlsx,.txt,.docx",
       maxFiles: 4,
-      maxFilesize: 1, 
+      maxFilesize: 1, // MB
       addRemoveLinks: true,
       accept: function (file: any, done: any) {
         done();
@@ -69,7 +65,10 @@ export class ContactComponent {
       success: (file: any, response: any) => {
         const uniqueId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
         file.customId = uniqueId;
-        this.bannerfile.push({id: uniqueId, file: file});
+        this.convertFileToBase64(file).then(base64 => {
+          this.bannerfile.push({id: uniqueId, file: base64,fileName:file.name,fileType:file.type});
+        });
+        console.log(this.bannerfile)
       }, removedfile: (file: any) => {
         file.previewElement.remove();
         this.bannerfile = this.bannerfile.filter((f:any) => f.id !== file.customId);
@@ -80,13 +79,21 @@ export class ContactComponent {
   submitted = false;
   onSubmit() {
     this.submitted = true;
-    if(this.bannerfile.length > 0){
-      for(let i=0;i<this.bannerfile.length;i++){
-        this.contactForm.get('fileNo_'+(i+1))?.setValue(this.bannerfile[i].file.dataURL);
-      }
-    }
+    
     if (this.contactForm.valid) {
-       this.http.post('https://nousinventa.com/app/api/submitcontact', this.contactForm.value)
+      let formData = this.contactForm.value
+      if(this.bannerfile.length > 0){
+        for(let i=0;i<this.bannerfile.length;i++){
+          let key = `fileNo_${i + 1}`;
+          let file = this.bannerfile[i];
+          formData[key] = {
+            base64: file.file,
+            filename: file.fileName,
+            mimetype: file.fileType
+          };
+        }
+      }
+       this.http.post('https://nousinventa.com/app/api/submitcontact',formData)
         .subscribe({
           next: res =>{
             successcontact("Thank you! Your message has been sent successfully.");
@@ -96,7 +103,7 @@ export class ContactComponent {
             this.submitted = false;
           },
           error: err => {
-            errorcontact("Sorry! Something went wrong. Please try again later.");
+            errorcontact("Sorry! Something went wrong. Please try again later.")
             this.bannerfile=[];
             this.contactForm.reset();
             this.dropzoneInstance.removeAllFiles(true); 
@@ -106,4 +113,17 @@ export class ContactComponent {
     }
   }
 
+  convertFileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        const base64string = (reader.result as string).split(',')[1]; // remove prefix
+        resolve(base64string);
+      };
+
+      reader.onerror = error => reject(error);
+    });
+  }
 }
