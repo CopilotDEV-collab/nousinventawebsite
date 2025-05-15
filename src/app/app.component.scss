@@ -73,3 +73,26 @@ body {
 [data-scroll-container] {
   overflow: hidden !important;
 }
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
+
+.navbar-brand .ti-menu-2{
+    margin-left: 15px;
+}
+
+@media(max-width:991px) {
+    .navbar-nav .dropdown-menu {
+         position: absolute; 
+    }
+}
+
+
+.text-white-1{
+    color:#fff !important
+}
+
+.navbar-nav .show .text-white-1{
+    color:#444050 !important
+}
