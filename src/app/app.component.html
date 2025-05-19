@@ -113,15 +113,25 @@
     <img src="assets/images/common/footer-bg.png" alt="footer bg" class="footer-bg banner-bg-img z-n1">
     <div class="container">
       <div class="row gx-0 gy-6 g-lg-6">
-        <div class="col-12">
-          <a (click)="navigateTo('home')" class="app-brand-link" style="cursor: pointer;">
+        <div class="col-12 mb-4">
+        <div class="row">
+        <div class="col-lg-9 col-md-9 col-12 order-2 order-md-1 order-lg-1">
+          <div class="d-flex align-items-center">
+            <h1 class="text-white" style="font-weight:  bold;line-height: 1.2;font-size: 54px;">Have an idea? <br> Let's build it </h1>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-12 order-1 order-md-2 order-lg-2">
+          <a (click)="navigateTo('home')" class="app-brand-link d-flex justify-content-start align-items-center mt-3" style="cursor: pointer;">
             <span class="app-brand-logo demo">
                 <span class="text-primary">
-                    <img src="assets/images/logo/Nousinventa white1.png" class="nav-logo-img">
+                    <img src="assets/images/logo/logomain.png" class="nav-logo-img" style="height: 110px;width: 108px;">
                 </span>
             </span>
             <span class="app-brand-text demo footer-link fw-bold ms-2 ps-1"></span>
           </a>
+        </div> 
+        </div> 
         </div>
         <div class="col-lg-6">
           <h6 class="text-white fw-bold mb-2">Office Location</h6>
@@ -142,9 +152,9 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <h6 class="footer-title mb-2">Other Links</h6>
-          <small class="text-white text-decoration-underline"><a (click)="navigateTo('home')" class="text-white">Home</a></small><br>
-          <small class="text-white text-decoration-underline"><a (click)="navigateTo('about')" class="text-white">About</a></small><br>
-          <small class="text-white text-decoration-underline"><a (click)="navigateTo('contact')" class="text-white">Contact Us</a></small>
+          <small class="text-white text-decoration-underline cursor-pointer"><a (click)="navigateTo('home')" class="text-white">Home</a></small><br>
+          <small class="text-white text-decoration-underline cursor-pointer"><a (click)="navigateTo('about')" class="text-white">About Us</a></small><br>
+          <small class="text-white text-decoration-underline cursor-pointer"><a (click)="navigateTo('contact')" class="text-white">Contact Us</a></small>
         </div>
 
         <div class="col-lg-3 col-md-4">
