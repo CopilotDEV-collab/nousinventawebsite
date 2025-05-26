@@ -106,3 +106,9 @@
     border-inline-start: 3px solid #fff !important;
     padding-inline-start: 1.4rem;
 }
+
+@media screen and (max-width: 769px) {
+    .con-left{
+        display: none;
+    }
+}
