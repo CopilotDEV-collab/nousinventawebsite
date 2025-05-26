@@ -84,6 +84,10 @@ export const routes: Routes = [
         pathMatch: 'full',
         loadComponent: () => import('./usecase/coldcaller/coldcaller.component').then(m => m.ColdcallerComponent)
     },
+    {   path: '*',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
     {   path: '**',
         redirectTo: 'home',
         pathMatch: 'full'
