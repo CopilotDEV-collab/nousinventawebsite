@@ -2,6 +2,7 @@
 import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Component,HostListener, AfterViewInit, OnDestroy, ElementRef, ViewChild, NgZone, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import * as AOS from 'aos'
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,RouterModule],
@@ -53,28 +54,48 @@ export class AppComponent implements AfterViewInit, OnDestroy{
       }
     }
 
-
-
-
      async ngAfterViewInit(): Promise<void> {
-      if (isPlatformBrowser(this.platformId)) {
+       if (isPlatformBrowser(this.platformId)) {
         import('locomotive-scroll').then((LocomotiveScroll) => {
           this.ngZone.runOutsideAngular(() => {
             this.locomotiveScroll = new LocomotiveScroll.default({
               el: this.scrollContainer.nativeElement,
               smooth: true,
-              lerp: 0.07
+              lerp: 0.07,
+              smartphone: {
+                smooth: true
+              }
+            });
+            import('aos').then((AOS) => {
+              AOS.init({
+                once: false,
+                duration: 1000,
+                easing: 'ease-in-out',
+                disableMutationObserver: true,
+                startEvent: 'DOMContentLoaded',
+                mirror: false,
+              });
+              Object.defineProperty(window, 'pageYOffset', {
+                get: () => this.locomotiveScroll.scroll.instance.scroll.y,
+              });
+              AOS.refreshHard();
             });
             this.router.events.subscribe((event) => {
               if (event instanceof NavigationEnd) {
                 setTimeout(() => {
                   this.locomotiveScroll.scrollTo(0, { duration: 0 });
                   this.locomotiveScroll.update();
+                  import('aos').then((AOS) => AOS.refreshHard());
                 }, 500);
               }
             });
+            
             this.locomotiveScroll.update();
-            window.addEventListener('resize', () => this.locomotiveScroll.update());
+            window.addEventListener('resize', () => {
+              this.locomotiveScroll.update()
+              import('aos').then((AOS) => AOS.refreshHard());
+            });
+
             this.locomotiveScroll.on('scroll', (event: any) => {
               this.ngZone.run(() => {
                 if(this.navignoreurl(this.url)){
@@ -83,6 +104,7 @@ export class AppComponent implements AfterViewInit, OnDestroy{
                   this.isScrolled = event.scroll.y > 100;
                 }
               });
+              setTimeout(() => {AOS.refreshHard();}, 100); 
             });
 
           });
