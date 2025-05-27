@@ -96,3 +96,9 @@ body {
 .navbar-nav .show .text-white-1{
     color:#444050 !important
 }
+
+[data-aos] {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
