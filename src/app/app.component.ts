@@ -31,10 +31,9 @@ export class AppComponent implements AfterViewInit, OnDestroy{
     }
 
 
-    navignoreurl(url:any):boolean{
-      return url === '/contact' || url === '/aipage' || url === '/aiautomation' || url === '/aiproductdev' || url === '/aiconsulting'
+      navignoreurl(url:any):boolean{
+      return url === '/contact' || url === '/aipage' || url === '/aiautomation' || url === '/aiproductdev' || url === '/aiconsulting' || url === '/privacypolicy'
     }
-  
      
     
     navigateTo(ind:any){
