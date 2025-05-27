@@ -83,6 +83,10 @@ export const routes: Routes = [
         path: 'coldcaller',
         pathMatch: 'full',
         loadComponent: () => import('./usecase/coldcaller/coldcaller.component').then(m => m.ColdcallerComponent)
+    },{
+        path :'privacypolicy',
+        pathMatch: 'full',
+        loadComponent: () => import('./privacypolicy/privacypolicy/privacypolicy.component').then(m => m.PrivacypolicyComponent)
     },
     {   path: '*',
         redirectTo: 'home',
