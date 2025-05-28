@@ -2,7 +2,9 @@
 import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Component,HostListener, AfterViewInit, OnDestroy, ElementRef, ViewChild, NgZone, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import * as AOS from 'aos'
+import * as AOS from 'aos';
+
+declare var require: any;
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,RouterModule],
@@ -54,6 +56,8 @@ export class AppComponent implements AfterViewInit, OnDestroy{
       }
     }
 
+    
+
      async ngAfterViewInit(): Promise<void> {
        if (isPlatformBrowser(this.platformId)) {
         import('locomotive-scroll').then((LocomotiveScroll) => {
@@ -66,7 +70,7 @@ export class AppComponent implements AfterViewInit, OnDestroy{
                 smooth: true
               }
             });
-            import('aos').then((AOS) => {
+    //        import('aos').then((AOS) => {
               AOS.init({
                 once: false,
                 duration: 1000,
@@ -78,14 +82,21 @@ export class AppComponent implements AfterViewInit, OnDestroy{
               Object.defineProperty(window, 'pageYOffset', {
                 get: () => this.locomotiveScroll.scroll.instance.scroll.y,
               });
-              AOS.refreshHard();
-            });
+              setTimeout(() => { 
+                //  import('aos').then((AOS) => AOS.refreshHard());
+                AOS.refreshHard();
+              }, 500); 
+   //         });
             this.router.events.subscribe((event) => {
               if (event instanceof NavigationEnd) {
                 setTimeout(() => {
                   this.locomotiveScroll.scrollTo(0, { duration: 0 });
                   this.locomotiveScroll.update();
-                  import('aos').then((AOS) => AOS.refreshHard());
+              //    import('aos').then((AOS) => AOS.refreshHard());
+                setTimeout(() => { 
+                //  import('aos').then((AOS) => AOS.refreshHard());
+                AOS.refreshHard();
+              }, 500); 
                 }, 500);
               }
             });
@@ -93,7 +104,11 @@ export class AppComponent implements AfterViewInit, OnDestroy{
             this.locomotiveScroll.update();
             window.addEventListener('resize', () => {
               this.locomotiveScroll.update()
-              import('aos').then((AOS) => AOS.refreshHard());
+              //import('aos').then((AOS) => AOS.refreshHard());
+              setTimeout(() => { 
+                //  import('aos').then((AOS) => AOS.refreshHard());
+                AOS.refreshHard();
+              }, 500); 
             });
 
             this.locomotiveScroll.on('scroll', (event: any) => {
@@ -104,7 +119,10 @@ export class AppComponent implements AfterViewInit, OnDestroy{
                   this.isScrolled = event.scroll.y > 100;
                 }
               });
-              setTimeout(() => {AOS.refreshHard();}, 100); 
+              setTimeout(() => { 
+                //  import('aos').then((AOS) => AOS.refreshHard());
+                AOS.refreshHard();
+              }, 500); 
             });
 
           });
