@@ -66,11 +66,9 @@ export class AppComponent implements AfterViewInit, OnDestroy{
               el: this.scrollContainer.nativeElement,
               smooth: true,
               lerp: 0.07,
-              smartphone: {
-                smooth: true
-              }
             });
-    //        import('aos').then((AOS) => {
+          const isMobileView = window.innerWidth <= 768;
+          if(!isMobileView){
               AOS.init({
                 once: false,
                 duration: 1000,
@@ -83,18 +81,24 @@ export class AppComponent implements AfterViewInit, OnDestroy{
                 get: () => this.locomotiveScroll.scroll.instance.scroll.y,
               });
               setTimeout(() => { 
-                //  import('aos').then((AOS) => AOS.refreshHard());
                 AOS.refreshHard();
               }, 500); 
-   //         });
+            }else{
+              AOS.init({
+                once: false,
+                duration: 1000,
+                easing: 'ease-in-out',
+                disableMutationObserver: true,
+                startEvent: 'DOMContentLoaded',
+                mirror: false,
+              });
+            }
             this.router.events.subscribe((event) => {
               if (event instanceof NavigationEnd) {
                 setTimeout(() => {
                   this.locomotiveScroll.scrollTo(0, { duration: 0 });
                   this.locomotiveScroll.update();
-              //    import('aos').then((AOS) => AOS.refreshHard());
                 setTimeout(() => { 
-                //  import('aos').then((AOS) => AOS.refreshHard());
                 AOS.refreshHard();
               }, 500); 
                 }, 500);
@@ -104,10 +108,8 @@ export class AppComponent implements AfterViewInit, OnDestroy{
             this.locomotiveScroll.update();
             window.addEventListener('resize', () => {
               this.locomotiveScroll.update()
-              //import('aos').then((AOS) => AOS.refreshHard());
               setTimeout(() => { 
-                //  import('aos').then((AOS) => AOS.refreshHard());
-                AOS.refreshHard();
+                  AOS.refreshHard();
               }, 500); 
             });
 
@@ -120,7 +122,6 @@ export class AppComponent implements AfterViewInit, OnDestroy{
                 }
               });
               setTimeout(() => { 
-                //  import('aos').then((AOS) => AOS.refreshHard());
                 AOS.refreshHard();
               }, 500); 
             });
